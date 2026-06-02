@@ -1,10 +1,20 @@
 const makeChange = (c) => {
-  // your name here
-	let a=c/25,b=(c-a)/10,l=(c-a-b)/10,e=(c-a-b-l);
-	let result = {"q":a,"d":b,"n":l,"p":e};
-	return result;
+    let total = parseInt(c);
+
+    let q = Math.floor(total / 25);
+    total %= 25;
+
+    let d = Math.floor(total / 10);
+    total %= 10;
+
+    let n = Math.floor(total / 5);
+    total %= 5;
+
+    let p = total;
+
+    return { "q": q, "d": d, "n": n, "p": p };
 };
 
-// Do not the change the code below
 const c = prompt("Enter c: ");
 alert(JSON.stringify(makeChange(c)));
+
